@@ -32,7 +32,7 @@
                     <button type="reset" class="red-link">Reset</button>
                     </form>';
                 } else {
-                    echo "<h1>Posting is currently disabled.</h1>";
+                    echo "<h1>Posting is currently disabled.</h1><p><b>Why is this?</b><br>In order to make sure that squidogram is safe, we are taking time to secure our system before allowing people to post</p>";
                 }
             ?>
         </main>
