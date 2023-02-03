@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+body {
+    background-color: rgb(214, 214, 214);
+    font-family: 'Open Sans', sans-serif;
+}
+main {
+    max-width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: rgb(111, 111, 111);
+    border-style: solid;
+    border-width: 1px;
+    padding: 12px;
+    margin-top: 13px;
+}
+
+main.index {
+    max-width: 370px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 8px;
+    margin-top: 13px;
+}
+
+img.icon {
+    filter: drop-shadow(0px 0px 10px gray);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+    padding: 7px;
+    filter: drop-shadow(0px -2px 5px gray);
+}
+
+.bold-link {
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+.bold-link:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+
+
+.red-link {
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    background-color: white; 
+    color: black; 
+    border: 2px solid red;
+}
+.red-link:hover {
+    background-color: red;
+    color: white;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: rgb(93, 93, 93);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -15px;
+    left: 105%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
