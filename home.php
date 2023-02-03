@@ -42,7 +42,7 @@
             echo "</span>";
             echo "<img src=\"data/images/";
             echo $value->img;
-            echo "\" style=\"width:490px;padding-top: 10px;border-radius:5px;\" loading=\"lazy\">";
+            echo "\" style=\"width:95%;padding-top: 10px;border-radius:5px;\" loading=\"lazy\">";
             echo "<p>";
             echo $value->description;
             echo "</p>";
@@ -52,7 +52,7 @@
     </div>
 </body>
 <script>
-    if (window.innerWidth<480) {
+    if (window.innerWidth<380) {
         document.body.innerText="Screen too small."
     }
 </script>
