@@ -21,10 +21,10 @@
     </header>
     <div style="height: 50px;"></div>
     <div style="margin-left: 15px;">
-    <main>
+    <!--<main>
         <h1>Welcome to Squidagram!</h1>
         <p>This is the homepage, where you will see all the posts by others on Squidagram.</p>
-    </main>
+    </main>-->
     <p style="color:gray;">Recommended Posts:</p>
     <?php
         $json = file_get_contents('data/posts.json');
