@@ -1,0 +1,7 @@
+run = "php -t 0.0.0.0:8000"
+
+[nix]
+
+[nix.channel]
+channel = "stable-22_05"
+
