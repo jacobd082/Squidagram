@@ -11,7 +11,13 @@
 <body>
 <header>
         <div style="display: table;width: 97vw;margin: 0;">
-            <span style="font-family: 'Pacifico', cursive; font-size: 20px;" style="text-align: left;display: table-cell;">Squidagram</span>
+            <span style="font-family: 'Pacifico', cursive; font-size: 20px;" style="text-align: left;display: table-cell;">Squidagram
+            <?php
+                            if (@$_POST['admin']=="jacobisme") {
+                                echo "<span style=\"color: blue;\">Administrator</span>";
+                            }
+            ?>
+            </span>
             <p style="text-align: right;display: table-cell;\">
                 <a href="/home.php" ><img src="/icons/home.png"></a>
                 &nbsp;
