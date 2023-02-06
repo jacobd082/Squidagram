@@ -47,7 +47,7 @@
             echo "\" style=\"width:100%;padding-top: 10px;border-radius:5px;\" loading=\"lazy\">";
             echo "<p>";
             echo $value->description;
-            if (@$_GET['admin']=="jacobisme") {
+            if (@$_POST['admin']=="jacobisme") {
                 echo " <a href=\"data/delete.php?postId=" . strval($key) . "&imageName=" . $value->img . "\">Delete</a>";
             }
             echo "</p>";
