@@ -18,7 +18,7 @@
             <p>Squidagram is the #1 best place on the internet for squids to connect.</p>
             <p>Speak with a large community of other squids on squidagram.</p>
         </main>
-        <main class="index" style="padding: 20px;">
+        <main class="index" style="padding-bottom: 20px;padding-top: 20px;">
             <a class="bold-link" href="home.php">Open Squidagram</a>
         </main>
     </center>
