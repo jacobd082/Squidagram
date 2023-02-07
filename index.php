@@ -7,6 +7,7 @@
     <title>Squidagram</title>
     <link rel="icon" href="/squid.png">
     <link rel="stylesheet" href="/base.css">
+    <meta name="description" content="Squidagram is the #1 place on the internet for squids to connect. Join Now!">
 </head>
 <body>
     <center>

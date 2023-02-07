@@ -63,8 +63,8 @@
     </div>
 </body>
 <script>
-    if (window.innerWidth<380) {
+    /*if (window.innerWidth<380) {
         document.body.innerText="Screen too small."
-    }
+    }*/
 </script>
 </html>
