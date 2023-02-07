@@ -8,7 +8,7 @@ $obj = json_decode($json, true);
 if (intval($_GET['postId'])==0) {
     echo "Error";
 } else {
-    unset($obj['posts'][intval($_GET['postId'])]);
+    #unset($obj->posts[intval($_GET['postId'])]);
     unlink("images/" . $_GET['imageName']);
     echo '<script>javascript:history.back()</script>';
 }

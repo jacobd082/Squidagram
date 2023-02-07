@@ -50,7 +50,7 @@
             echo "</span>";
             echo "<img src=\"data/images/";
             echo $value->img;
-            echo "\" style=\"width:100%;padding-top: 10px;border-radius:5px;\" loading=\"lazy\">";
+            echo "\" style=\"width:100%;padding-top: 10px;border-radius:5px;\" loading=\"lazy\" onerror=\"this.onerror=null; this.src='data/images/missing.png'\">";
             echo "<p>";
             echo $value->description;
             if (@$_POST['admin']=="jacobisme") {

@@ -31,10 +31,10 @@
                 if ($allow_uploads) {
                     echo '<h1>Submit a post</h1><form action="/data/upload.php" method="post" enctype="multipart/form-data">
                     Image File: <input type="file" placeholder="No File" required name="fileToUpload" id="fileToUpload"><br>
-                    Description: <input type="text" maxlength="200" placeholder="max 200 chars." required name="des"><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div>
+                    Description: <input type="text" maxlength="200" placeholder="max 200 chars." required name="des"><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>
                     <button type="submit" class="bold-link">Share</button>
                     <button type="reset" class="red-link">Reset</button>
-                    </form><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>';
+                    </form>';
                 } else {
                     echo "<h1>Posting is currently disabled.</h1><p><b>Why is this?</b><br>In order to make sure that squidagram is safe, we are taking time to secure our system before allowing people to post</p>";
                 }
