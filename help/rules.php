@@ -24,13 +24,13 @@
     <div style="height: 50px;"></div>
     <center>
     <?php
-    if ($_GET['showBack']=="1") {
+    if (@$_GET['showBack']=="1") {
         echo "<main><a href=\"javascript:history.back()\">< Go Back</a></main>";
     }
     ?>
     <main>
         <h1>Our Rules</h1>
-        <p>This rules tell you what you are allowed to post on Squidagram.</p>
+        <p>These rules tell you what you are allowed to post on Squidagram.</p>
         <p>A squid swimming in the sea:<br><b style="color: rgb(0, 165, 0);">Allowed</b></p>
         <p>An appropriate drawing of a squid:<br><b style="color: rgb(0, 165, 0);">Allowed</b></p>
         <p>Anything that is not a squid:<br><b style="color: red;">Not allowed</b></p>

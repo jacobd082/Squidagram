@@ -22,6 +22,9 @@
         <main class="index" style="padding-bottom: 20px;padding-top: 20px;">
             <a class="bold-link" href="home.php">Open Squidagram</a>
         </main>
+        <main class="index">
+            <p style="color:gray;">A freelance project by <a href="https://zzz.jacobdrath.co">Jacob Drath</a>. No account required.<br><a href="help/rules.php">Posting Guidelines</a></p>
+        </main>
     </center>
 </body>
 </html>

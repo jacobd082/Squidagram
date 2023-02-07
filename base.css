@@ -15,6 +15,10 @@ main {
     margin-top: 13px;
 }
 
+a {
+    color: blue;
+}
+
 main.index {
     max-width: 370px;
     background-color: white;
