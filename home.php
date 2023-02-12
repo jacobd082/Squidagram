@@ -7,6 +7,7 @@
     <title>Squidagram</title>
     <link rel="icon" href="/squid.png">
     <link rel="stylesheet" href="/base.css">
+    <link rel="manifest" href="/manifest.webmanifest">
 </head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-93Q3KS0HH5"></script>

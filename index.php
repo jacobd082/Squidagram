@@ -8,6 +8,8 @@
     <link rel="icon" href="/squid.png">
     <link rel="stylesheet" href="/base.css">
     <meta name="description" content="Squidagram is the #1 place on the internet for squids to connect. Join Now!">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#CCCCCC">
 </head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-93Q3KS0HH5"></script>

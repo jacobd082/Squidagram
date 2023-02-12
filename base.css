@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 body {
-    background-color: rgb(214, 214, 214);
+    background-color: #CCCCCC;
     font-family: 'Open Sans', sans-serif;
 }
 main {
@@ -100,3 +100,10 @@ header {
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
+
+
+  svg path,
+svg rect{
+  fill: #000000;
+}

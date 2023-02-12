@@ -1,0 +1,48 @@
+{
+    "theme_color": "#FFFFFF",
+    "background_color": "#CCCCCC",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/iosstartup.htm",
+    "name": "Squidagram",
+    "short_name": "Squidagram",
+    "description": "Squidagram is the #1 best place on the internet for squids to connect.  Speak with a large community of other squids on squidagram.",
+    "icons": [
+        {
+            "src": "/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "shortcuts": [
+        {
+          "name": "Recommended Posts",
+          "short_name": "Recommended",
+          "description": "See popular posts on Squidagram",
+          "url": "/home.php",
+          "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+        },
+        {
+          "name": "Make a post",
+          "short_name": "Post",
+          "description": "Post something on Squidagram",
+          "url": "/tomorrow?source=pwa",
+          "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+        }
+      ]
+}
