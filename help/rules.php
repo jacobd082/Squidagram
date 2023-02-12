@@ -36,10 +36,14 @@
         <p>Anything that is not a squid:<br><b style="color: red;">Not allowed</b></p>
         <p>An octopus:<br><b style="color: red;">Not allowed</b></p>
         <p>Squids participating in mating or reproductive behavior:<br><b style="color: red;">Not allowed</b></p>
-        <p>A squid outside of water:<br><b style="color: red;">Not allowed</b></p>
-        <p>A deceased squid:<br><b style="color: red;">Not allowed</b></p>
-        <p>A squid with a political affiliation:<br><b style="color: red;">Not allowed</b></p>
+        <p>A squid outside of water:<br><b style="color: red;">Not allowed*</b></p>
+        <p>A deceased squid:<br><b style="color: red;">Not allowed*</b></p>
+        <p>A squid with a political affiliation**:<br><b style="color: red;">Not allowed</b></p>
         <p>Anything else:<br><b style="color: red;">Not allowed</b></p>
+        <hr>
+        <p>* Allowed if showing respect for a squid passing.</p>
+        <p>** Squidagram reserves the right to use common sense to decide what is a "political" opinion.</p>
+        <p>Squidagram reserves the right to make changes when needed.</p>
     </main>
     </center>
 </body>
