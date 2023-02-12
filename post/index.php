@@ -41,7 +41,7 @@
                 if ($allow_uploads) {
                     echo '<h1>Submit a post</h1><form action="/data/upload.php" method="post" enctype="multipart/form-data">
                     Image File: <input type="file" placeholder="No File" required name="fileToUpload" id="fileToUpload"><br>
-                    Description: <input type="text" maxlength="200" placeholder="max 200 chars." required name="des"><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>
+                    Description: <input type="text" maxlength="200" placeholder="max 200 chars." required name="des" id="des" oninput="onInput()" autocomplete="off"><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>
                     <button type="submit" class="bold-link">Share</button>
                     <button type="reset" class="red-link">Reset</button>
                     </form>';
@@ -51,5 +51,12 @@
             ?>
         </main>
     </center>
+    <script>
+        function onInput() {
+            input = document.getElementById("des")
+            input.value = input.value.replaceAll("<","")
+            input.value = input.value.replaceAll(">","")
+        }
+    </script>
 </body>
 </html>

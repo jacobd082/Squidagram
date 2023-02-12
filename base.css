@@ -107,3 +107,7 @@ header {
 svg rect{
   fill: #000000;
 }
+
+html {
+    scroll-behavior: smooth;
+}

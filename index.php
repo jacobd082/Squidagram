@@ -34,7 +34,7 @@
             <a class="bold-link" href="home.php">Open Squidagram</a>
         </main>
         <main class="index">
-            <p style="color:gray;">A freelance project by <a href="https://zzz.jacobdrath.co">Jacob Drath</a>. No account required.<br><a href="help/rules.php">Posting Guidelines</a> - <a href="help/privacy-policy.php">Privacy Policy</a></p>
+            <p style="color:gray;">A freelance project by <a href="https://zzz.jacobdrath.co">Jacob Drath</a>. No account required.<br><a href="help/rules.php?showBack=1">Posting Guidelines</a> - <a href="help/privacy-policy.php?showBack=1">Privacy Policy</a> - <a href="help/credits.php?showBack=1">Credits & Acknowledgments</a></p>
         </main>
     </center>
 </body>
