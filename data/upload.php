@@ -112,12 +112,53 @@ if (isJson($result)) {
     }
 }
 
+
+
+function removeExif($old, $new)
+{
+    // Open the input file for binary reading
+    $f1 = fopen($old, 'rb');
+    // Open the output file for binary writing
+    $f2 = fopen($new, 'wb');
+
+    // Find EXIF marker
+    while (($s = fread($f1, 2))) {
+        $word = unpack('ni', $s)['i'];
+        if ($word == 0xFFE1) {
+            // Read length (includes the word used for the length)
+            $s = fread($f1, 2);
+            $len = unpack('ni', $s)['i'];
+            // Skip the EXIF info
+            fread($f1, $len - 2);
+            break;
+        } else {
+            fwrite($f2, $s, 2);
+        }
+    }
+
+    // Write the rest of the file
+    while (($s = fread($f1, 4096))) {
+        fwrite($f2, $s, strlen($s));
+    }
+
+    fclose($f1);
+    fclose($f2);
+    copy($new, $old);
+    unlink($new);
+}
+
+
+
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     echo "<h1>Posted!</h1>";
+    if ($imageFileType == "jpeg") {
+      removeExif($target_file, generateRandomString(5));
+    }
     $json = file_get_contents('posts.json');
     $obj = json_decode($json);
     $newData['user'] = "squid-" . generateRandomString(6);
