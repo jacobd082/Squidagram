@@ -10,6 +10,15 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta name="description" content="Squidagram is the #1 place on the internet for squids to connect. Join Now!">
 </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-93Q3KS0HH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-93Q3KS0HH5');
+</script>
 <body>
 <header>
         <div style="display: table;width: 97vw;margin: 0;">

@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="/base.css">
     <meta name="description" content="Squidagram is the #1 place on the internet for squids to connect. Join Now!">
 </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-93Q3KS0HH5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-93Q3KS0HH5');
+</script>
 <body>
     <center>
         <main class="index">
