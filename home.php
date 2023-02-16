@@ -27,6 +27,7 @@
                                 echo "<span style=\"color: blue;\">Administrator</span>";
                             }
             ?>
+            </a>
             </span>
             <p style="text-align: right;display: table-cell;\">
                 <a href="/home.php" ><img src="/icons/home.png"></a>
@@ -48,8 +49,9 @@
         $json = file_get_contents('data/posts.json');
         $obj = json_decode($json);
         foreach ($obj->posts as $key => $value) {
-            echo "<main><span>@";
+            echo "<main><span style=\"padding-left:12px;display: flex;align-items: center;\">";
             if ($value->user=="squidagram") {
+                echo '<img src="squid.png" height="25px">&nbsp;';
                 echo '<span class="tooltip">squidagram<img src="/icons/verified.png" height="14px"><span class="tooltiptext">Verified Account</span></span>';
                 //echo "<img src=\"/icons/verified.png\" height=\"14px\" title=\"Official Account\">";
             } else {
@@ -60,8 +62,8 @@
             echo "</span>";
             echo "<img src=\"data/images/";
             echo $value->img;
-            echo "\" style=\"width:100%;padding-top: 10px;border-radius:5px;\" loading=\"lazy\" onerror=\"this.onerror=null; this.src='data/images/missing.png'\">";
-            echo "<p>";
+            echo "\" style=\"width:100%;padding-top: 10px;\" loading=\"lazy\" onerror=\"this.onerror=null; this.src='data/images/missing.png'\">";
+            echo "<p style=\"padding-left:12px;\">";
             echo $value->description;
             if (@$_POST['admin']=="jacobisme") {
                 echo " <a href=\"data/delete.php?postId=" . strval($key) . "&imageName=" . $value->img . "\">Delete</a>";

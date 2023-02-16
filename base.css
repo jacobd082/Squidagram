@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 body {
     background-color: #CCCCCC;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 main {
     max-width: 500px;
@@ -11,7 +12,8 @@ main {
     border-color: rgb(111, 111, 111);
     border-style: solid;
     border-width: 1px;
-    padding: 12px;
+    padding: 0px;
+    padding-top: 12px;
     margin-top: 13px;
 }
 
