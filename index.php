@@ -59,7 +59,7 @@
           </a>
           <div style="height: 35px;"></div>
           <a href="help/credits.php?showBack=1" class="cta">
-            <span>Credits & Acknowledgments</span>
+            <span>Acknowledgments</span>
             <svg width="13px" height="10px" viewBox="0 0 13 10">
               <path d="M1,5 L11,5"></path>
               <polyline points="8 1 12 5 8 9"></polyline>
