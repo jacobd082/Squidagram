@@ -35,14 +35,14 @@
           "short_name": "Recommended",
           "description": "See popular posts on Squidagram",
           "url": "/home.php",
-          "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+          "icons": [{ "src": "/icons/home.png", "sizes": "24x24" }]
         },
         {
           "name": "Make a post",
           "short_name": "Post",
           "description": "Post something on Squidagram",
-          "url": "/tomorrow?source=pwa",
-          "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+          "url": "/post/",
+          "icons": [{ "src": "/icons/post.png", "sizes": "24x24" }]
         }
       ]
 }
