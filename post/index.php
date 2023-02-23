@@ -39,11 +39,11 @@
             <?php 
                 $allow_uploads = true;
                 if ($allow_uploads) {
-                    echo '<h1>Submit a post</h1><form action="/data/upload.php" method="post" enctype="multipart/form-data">
-                    Image File: <input type="file" placeholder="No File" required name="fileToUpload" id="fileToUpload"><br>
-                    Description: <input type="text" maxlength="200" placeholder="max 200 chars." required name="des" id="des" oninput="onInput()" autocomplete="off"><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>
+                    echo '<h1>Post</h1><form action="/data/upload.php" method="post" enctype="multipart/form-data">
+                    Image File:<br><input type="file" placeholder="No File" required name="fileToUpload" id="fileToUpload"><br><br>
+                    Description: <br><textarea type="text" maxlength="200" placeholder="This will be shown bellow your post. (max 200 chars.)" required name="des" id="des" oninput="onInput()" autocomplete="off" style="width: 266px; height: 87px;"></textarea><br><br><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>
                     <button type="submit" class="bold-link">Share</button>
-                    <button type="reset" class="red-link">Reset</button>
+                    <button type="reset" class="red-link">Reset</button><br><br>
                     </form>';
                 } else {
                     echo "<h1>Posting is currently disabled.</h1><p><b>Why is this?</b><br>In order to make sure that squidagram is safe, we are taking time to secure our system before allowing people to post</p>";
