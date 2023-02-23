@@ -45,6 +45,11 @@
         <p>This is the homepage, where you will see all the posts by others on Squidagram.</p>
     </main>-->
     <?php
+                            if (@$_POST['admin']=="jacobisme") {
+                                echo "<main><b>You are logged in as an admin.</b><br><a href=\"admin/update.php\">Update</a></main>";
+                            }
+    ?>
+    <?php
         if (@$_GET['order']=="new") {
             echo "<p style=\"color:gray;\">Posts <a style=\"color:gray;\" href=\"/home.php\">(Newer → Older)</a>:</p>";
         } else {
