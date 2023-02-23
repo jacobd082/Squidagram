@@ -1,6 +1,6 @@
 {
     "theme_color": "#FFFFFF",
-    "background_color": "#CCCCCC",
+    "background_color": "#FFFFFF",
     "display": "standalone",
     "scope": "/",
     "start_url": "/iosstartup.htm",
