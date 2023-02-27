@@ -54,7 +54,7 @@ if(isset($_POST["submit"])) {
 
 // Check if file already exists
 if (file_exists($target_file)) {
-  echo "Sorry, file already exists. Please rename your file and try again.<br><br>";
+  echo "Internal Error. Try Again.";
   $uploadOk = 0;
 }
 
@@ -67,8 +67,8 @@ if ($_FILES["fileToUpload"]["size"] > 800000) {
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" && $imageFileType != "webp" ) {
-  echo "Sorry, only JPG, JPEG, WEBP, PNG & GIF files are allowed.";
   $uploadOk = 0;
+  echo "<b>Invalid File Format</b> Sorry, only JPG, JPEG, WEBP, PNG & GIF files are allowed. The file that you uploaded is a " . $imageFileType;
 }
 
 //The url you wish to send the POST request to
@@ -105,10 +105,10 @@ $result = curl_exec($ch);
 if (isJson($result)) {
     $manage = json_decode($result);
     if ($manage->success) {
-      $uploadOk = 1;
+      // No Error
     } else {
       $uploadOk = 0;
-      echo "Human Verification Failed!";
+      echo "<b>Verification Failed!</b> Please complete the \"I am not a robot\" check.";
     }
 }
 
@@ -155,7 +155,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "<h1>Posted!</h1>";
+    echo "<br><img src=\"/icons/check.png\"><h1>Posted!</h1><p>Thank you for posting on Squidagram!</p><p>You can view your post <a href=\"/viewpost.php?u=" . $fileName . "\">here</a>.</p>";
     if ($imageFileType == "jpeg") {
       removeExif($target_file, generateRandomString(5));
     }
