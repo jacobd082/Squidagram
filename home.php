@@ -76,7 +76,7 @@
             echo "<img src=\"data/images/";
             echo $value->img;
             echo "\" style=\"width:100%;padding-top: 10px;\" loading=\"lazy\" onerror=\"this.onerror=null; this.src='data/images/missing.png'\">";
-            echo "<p style=\"padding-left:12px;text-overflow: ellipsis;overflow: hidden;white-space: wrap;\">";
+            echo "<p style=\"padding-left:12px;overflow-wrap: break-word;\">";
             echo $value->description;
             if (@$_POST['admin']=="jacobisme") {
                 echo " <a href=\"data/delete.php?postId=" . strval($key) . "&imageName=" . $value->img . "\">Delete</a>";
