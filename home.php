@@ -39,7 +39,8 @@
         </div>
     </header>
     <div style="height: 50px;"></div>
-    <div style="margin-left: 15px;">
+    <div style="display: flex;">
+    <div style="margin-left: 15px;flex: 3;">
     <!--<main>
         <h1>Welcome to Squidagram!</h1>
         <p>This is the homepage, where you will see all the posts by others on Squidagram.</p>
@@ -84,6 +85,38 @@
             echo "</main>";
         }
     ?>
+    </div>
+    <aside style="flex: 1;" id="sidebar">
+        <main class="index">
+            <center>
+                <img src="squid.png" height="100">
+                <p style="font-weight: bold;">Welcome to Squidagram!</p>
+            </center>
+        </main>
+        <main class="index">
+            <center>
+                <p>Submit a post <a href="post/">here</a>!</p>
+            </center>
+        </main>
+        <main class="index">
+            <p>View the official Squidagram account:
+            <div><a href="profile.php?u=squidagram">
+                <span class="tooltip"><span style="color: black;border-style: solid;border-color: rgb(211, 211, 211);border-radius: 5px;margin: 5px;border-width: 2px;">squidagram<img src="/icons/verified.png" height="14px"></span><span class="tooltiptext"><center><span style="width:14px;"></span><img src="squid.png" width="40"><img src="/icons/verified.png" height="14"><br><b>Squidagram</b><br>@squidagram<br><span style="color:#00caed;">Verified</span></center></span></span>
+            </a></div>
+            </p>
+        </main>
+        <main class="index">
+            <center>
+                <p>There is currently <?php echo count($obj->posts); ?> posts on Squidagram</p>
+            </center>
+        </main>
+        <main class="index">
+            <center>
+                <p>Made by <a href="https://zzz.jacobdrath.co">Jacob Drath</a> - <a href="help/privacy-policy.php">Privacy Policy</a> - <a href="help/rules.php">Posting Guidelines</a> - <a href="help/credits.php">Acknowledgments</a></p>
+            </center>
+        </main>
+        <p><a href="javascript:document.getElementById('sidebar').style.display='none'" style="color:gray;font-size: 10px;">Hide this</a></p>
+    </aside>
     </div>
 </body>
 <script>

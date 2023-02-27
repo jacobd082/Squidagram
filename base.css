@@ -113,3 +113,9 @@ svg rect{
 html {
     scroll-behavior: smooth;
 }
+
+@media (max-width:960px) {
+    aside {
+        display: none;
+    }
+}
