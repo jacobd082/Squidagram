@@ -67,7 +67,7 @@
                 echo '<img src="squid.png" height="25px">&nbsp;';
                 echo '<span class="tooltip">squidagram <img src="/icons/verified.png" height="14px"><span class="tooltiptext"><center><span style="width:14px;"></span><img src="squid.png" width="40"><img src="/icons/verified.png" height="14"><br><b>Squidagram</b><br>@squidagram<br><span style="color:#00caed;">Verified</span></center></span></span>';
                 //echo "<img src=\"/icons/verified.png\" height=\"14px\" title=\"Official Account\">";
-            } else if (str_starts_with($value->user, "squid-")) {
+            } else if (substr( $value->user, 0, 6 ) === "squid-") {
                 echo '<span class="tooltip">';
                 echo $value->user;
                 echo '<span class="tooltiptext"><center><span style="width:14px;"></span><b>Unknown User</b><br>@' . $value->user . '</center></span></span>';
