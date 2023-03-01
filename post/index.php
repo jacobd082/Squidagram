@@ -91,7 +91,6 @@ if (isset($_GET['code'])) {
 } else {
     echo "<p>Login with Instagram to use your username</p><a href=\"https://api.instagram.com/oauth/authorize?client_id=144702278511036&redirect_uri=https://squidagram.jacobdrath.co/post/index.php&scope=user_profile,user_media&response_type=code\" class=\"bold-link\">Login with Instagram</a><br><br>";
 }
-
 ?>
         </main>
         </form></center>
