@@ -65,12 +65,20 @@
             echo "<main><span style=\"padding-left:12px;display: flex;align-items: center;\">";
             if ($value->user=="squidagram") {
                 echo '<img src="squid.png" height="25px">&nbsp;';
-                echo '<span class="tooltip">squidagram<img src="/icons/verified.png" height="14px"><span class="tooltiptext"><center><span style="width:14px;"></span><img src="squid.png" width="40"><img src="/icons/verified.png" height="14"><br><b>Squidagram</b><br>@squidagram<br><span style="color:#00caed;">Verified</span></center></span></span>';
+                echo '<span class="tooltip">squidagram <img src="/icons/verified.png" height="14px"><span class="tooltiptext"><center><span style="width:14px;"></span><img src="squid.png" width="40"><img src="/icons/verified.png" height="14"><br><b>Squidagram</b><br>@squidagram<br><span style="color:#00caed;">Verified</span></center></span></span>';
                 //echo "<img src=\"/icons/verified.png\" height=\"14px\" title=\"Official Account\">";
-            } else {
+            } else if (str_starts_with($value->user, "squid-")) {
                 echo '<span class="tooltip">';
                 echo $value->user;
                 echo '<span class="tooltiptext"><center><span style="width:14px;"></span><b>Unknown User</b><br>@' . $value->user . '</center></span></span>';
+            } else {
+                echo '<span class="tooltip">';
+                echo $value->user;
+                echo ' <img src="/icons/instagram.png" height="14px">';
+                if (($value->user=="jacd082") || ($value->user=="squidagramofficial")) {
+                    echo '<img src="/icons/verified.png" height="14px">';
+                }
+                echo '<span class="tooltiptext"><center><span style="width:14px;"></span><b>@' . $value->user . '</b><br>Instagram User</center></span></span>';
             }
             echo "</span>";
             echo "<img src=\"data/images/";
