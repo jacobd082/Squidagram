@@ -76,7 +76,7 @@
                 echo $value->user;
                 echo ' <img src="/icons/instagram.png" height="14px">';
                 if (($value->user=="jacd082") || ($value->user=="squidagramofficial")) {
-                    echo '<img src="/icons/verified.png" height="14px">';
+                    echo ' <img src="/icons/verified.png" height="14px">';
                 }
                 echo '<span class="tooltiptext"><center><span style="width:14px;"></span><b>@' . $value->user . '</b><br>Instagram User</center></span></span>';
             }

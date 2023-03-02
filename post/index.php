@@ -80,13 +80,14 @@ if (isset($_GET['code'])) {
     
     //execute post
     $result = curl_exec($ch);
+  echo $result;
     if (isJson($result)) {
         $result = json_decode($result);
     } else {
         echo "<h1>Error</h1>";
     }
+
     $user_data = json_decode(file_get_contents('https://graph.instagram.com/' . $result->user_id . '?fields=id,username&access_token=' . $result->access_token));
-    
     echo '<p>Logged in with Instagram as <b>'.$user_data->username.'</b>. This username will be shown publicly with your post. <a href="/post/">Logout</a></p><div style="display:none;"><input name="token" id="token" type="text" value="'.$result->access_token.'"><input name="uid" id="uid" type="text" value="'.$result->user_id.'"></div>';
 } else {
     echo "<p>Login with Instagram to use your username</p><a href=\"https://api.instagram.com/oauth/authorize?client_id=144702278511036&redirect_uri=https://squidagram.jacobdrath.co/post/index.php&scope=user_profile,user_media&response_type=code\" class=\"bold-link\">Login with Instagram</a><br><br>";
