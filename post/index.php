@@ -10,7 +10,11 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta name="description" content="Squidagram is the #1 place on the internet for squids to connect. Join Now!">
     <link rel="manifest" href="/manifest.webmanifest">
+    <?php
+    header('Content-Security-Policy-Report-Only: script-src https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; connect-src https://accounts.google.com/gsi/;');
+    ?>
 </head>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-93Q3KS0HH5"></script>
 <script>
@@ -45,54 +49,27 @@
         </main>
         <main>
         <?php
-if (isset($_GET['code'])) {
-    //The url you wish to send the POST request to
-    $url = 'https://api.instagram.com/oauth/access_token';
-
-    //The data you want to send via POST
-    $fields = [
-        'client_id' => '144702278511036',
-        'client_secret' => '1740d4030e38fbfa8efeea4548e00a6d',
-        'grant_type' => 'authorization_code',
-        'redirect_uri' => 'https://squidagram.jacobdrath.co/post/index.php',
-        'code' => $_GET['code']
-    ];
-    
-    //url-ify the data for the POST
-    $fields_string = http_build_query($fields);
-    
-    
-    function isJson($string) {
-        json_decode($string);
-        return json_last_error() === JSON_ERROR_NONE;
-     }
-    
-    //open connection
-    $ch = curl_init();
-    
-    //set the url, number of POST vars, POST data
-    curl_setopt($ch,CURLOPT_URL, $url);
-    curl_setopt($ch,CURLOPT_POST, true);
-    curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-    
-    //So that curl_exec returns the contents of the cURL; rather than echoing it
-    curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
-    
-    //execute post
-    $result = curl_exec($ch);
-  echo $result;
-    if (isJson($result)) {
-        $result = json_decode($result);
-    } else {
-        echo "<h1>Error</h1>";
-    }
-
-    $user_data = json_decode(file_get_contents('https://graph.instagram.com/' . $result->user_id . '?fields=id,username&access_token=' . $result->access_token));
-    echo '<p>Logged in with Instagram as <b>'.$user_data->username.'</b>. This username will be shown publicly with your post. <a href="/post/">Logout</a></p><div style="display:none;"><input name="token" id="token" type="text" value="'.$result->access_token.'"><input name="uid" id="uid" type="text" value="'.$result->user_id.'"></div>';
-} else {
-    echo "<p>Login with Instagram to use your username</p><a href=\"https://api.instagram.com/oauth/authorize?client_id=144702278511036&redirect_uri=https://squidagram.jacobdrath.co/post/index.php&scope=user_profile,user_media&response_type=code\" class=\"bold-link\">Login with Instagram</a><br><br>";
-}
-?>
+            if (isset($_COOKIE['user'])) {
+                echo '<p>Logged in as <b>'.$_COOKIE['user'].'</b><br>This will be shown publicly on your post.<br><a href="/auth/logout.php?fromPost=1">Logout</a></p>';
+            } else {
+                echo '<div id="g_id_onload"
+                data-client_id="817915936513-r81t57nc8s0dfe1pun598s61m1d1csp6.apps.googleusercontent.com"
+                data-context="signup"
+                data-ux_mode="popup"
+                data-login_uri="http://squidagram.jacobdrath.co/auth/google.php"
+                data-auto_prompt="false">
+           </div>
+           
+           <div class="g_id_signin"
+                data-type="standard"
+                data-shape="pill"
+                data-theme="outline"
+                data-text="signin"
+                data-size="large"
+                data-logo_alignment="left">
+           </div>';
+            }
+        ?>
         </main>
         </form></center>
     <script>

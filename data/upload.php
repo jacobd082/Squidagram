@@ -161,9 +161,12 @@ if ($uploadOk == 0) {
     }
     $json = file_get_contents('posts.json');
     $obj = json_decode($json);
-    if (isset($_POST['token'])) {
-      $user_data = json_decode(file_get_contents('https://graph.instagram.com/' . $_POST['uid'] . '?fields=id,username&access_token=' . $_POST['token']));
-      $newData['user'] = $user_data->username;
+    if (isset($_COOKIE['user'])) {
+      if (strtolower($_COOKIE['user'])!="squiagram") {
+        $newData['user'] = $_COOKIE['user'];
+      } else {
+        $newData['user'] = "squid-" . generateRandomString(6);
+      }
     } else {
       $newData['user'] = "squid-" . generateRandomString(6);
     }

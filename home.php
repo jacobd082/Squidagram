@@ -74,11 +74,10 @@
             } else {
                 echo '<span class="tooltip">';
                 echo $value->user;
-                echo ' <img src="/icons/instagram.png" height="14px">';
                 if (($value->user=="jacd082") || ($value->user=="squidagramofficial")) {
                     echo ' <img src="/icons/verified.png" height="14px">';
                 }
-                echo '<span class="tooltiptext"><center><span style="width:14px;"></span><b>@' . $value->user . '</b><br>Instagram User</center></span></span>';
+                echo '<span class="tooltiptext"><center><span style="width:14px;"></span><b>@' . $value->user . '</b><br>Squidagram User</center></span></span>';
             }
             echo "</span>";
             echo "<img src=\"data/images/";
@@ -118,6 +117,15 @@
                 <p>There is currently <?php echo count($obj->posts); ?> posts on Squidagram</p>
             </center>
         </main>
+        <?php
+            if (isset($_COOKIE['user'])) {
+                echo '<main class="index">
+                    <center>
+                    <p>Logged in as <b>'.$_COOKIE['user'].'</b><br><a href="/auth/logout.php">Logout</a></p>
+                    </center>
+                    </main>';
+            }
+        ?>
         <main class="index">
             <center>
                 <p>Made by <a href="https://zzz.jacobdrath.co">Jacob Drath</a> - <a href="help/privacy-policy.php">Privacy Policy</a> - <a href="help/rules.php">Posting Guidelines</a> - <a href="help/credits.php">Acknowledgments</a></p>
@@ -126,10 +134,24 @@
         <p><a href="javascript:document.getElementById('sidebar').style.display='none'" style="color:gray;font-size: 10px;">Hide this</a></p>
     </aside>
     </div>
+    <div id="snackbar"><table><tr><td><img src="/squid.png" width="40px"></td><td><span style="color:gray;font-size:10px;">Squiddy:</span><p id="snacktext" style="padding:0;margin:0;"></p></td></tr></table></div>
 </body>
-<script>
-    /*if (window.innerWidth<380) {
-        document.body.innerText="Screen too small."
-    }*/
+        <script>
+function toast(msg) {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+  document.getElementById("snacktext").innerHTML = msg;
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
+<?php
+    if (isset($_GET['msg'])) {
+        echo "toast(\"".$_GET['msg']."\")";
+    }
+?>
 </script>
 </html>
