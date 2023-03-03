@@ -11,7 +11,7 @@
     <meta name="description" content="Squidagram is the #1 place on the internet for squids to connect. Join Now!">
     <link rel="manifest" href="/manifest.webmanifest">
     <?php
-    header('Content-Security-Policy-Report-Only: script-src https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; connect-src https://accounts.google.com/gsi/;');
+    //header('Content-Security-Policy-Report-Only: script-src https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; connect-src https://accounts.google.com/gsi/;');
     ?>
 </head>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -56,7 +56,7 @@
                 data-client_id="817915936513-r81t57nc8s0dfe1pun598s61m1d1csp6.apps.googleusercontent.com"
                 data-context="signup"
                 data-ux_mode="popup"
-                data-login_uri="http://squidagram.jacobdrath.co/auth/google.php"
+                data-login_uri="https://squidagram.jacobdrath.co/auth/google.php"
                 data-auto_prompt="false">
            </div>
            
