@@ -25,6 +25,10 @@
     <h1>#<?php echo $_GET['id']; ?></h1>
     <p style="color:gray;">#<?php echo $_GET['id']; ?>:</p>
     <?php
+    function str_contains($haystack, $needle)
+    {
+        return (strpos($haystack, $needle) !== false);
+    }
         $json = file_get_contents('data/posts.json');
         $obj = json_decode($json);
         $obj->posts = array_reverse($obj->posts);

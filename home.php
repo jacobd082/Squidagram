@@ -234,7 +234,9 @@ window.onload = function () {
     if (isset($_GET['msg'])) {
         echo "toast(\"".$_GET['msg']."\")";
     } else {
-      echo 'toast("Hi, '.ucfirst($_COOKIE['user']).'!")';
+      if (isset($_COOKIE['user'])) {
+        echo 'toast("Hi, '.ucfirst($_COOKIE['user']).'!")';
+      }
     }
 ?>
 </script>
