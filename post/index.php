@@ -25,19 +25,7 @@
   gtag('config', 'G-93Q3KS0HH5');
 </script>
 <body>
-<header>
-        <div style="display: table;width: 97vw;margin: 0;">
-            <span style="font-family: 'Pacifico', cursive; font-size: 20px;" style="text-align: left;display: table-cell;">Squidagram</span>
-            <p style="text-align: right;display: table-cell;\">
-                <a href="/home.php" ><img src="/icons/home.png"></a>
-                &nbsp;
-                <a href="/post/" ><img src="/icons/post.png"></a>
-                &nbsp;
-                <a href="/"><img src="/icons/logout.png"></a>
-            </p>
-        </div>
-    </header>
-    <div style="height: 50px;"></div>
+<?php echo file_get_contents('../ui/header.htm') ?>
     <center><form action="/data/upload.php" method="post" enctype="multipart/form-data">
         <?php
 if (isset($_COOKIE['user'])) {

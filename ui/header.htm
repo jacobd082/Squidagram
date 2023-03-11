@@ -1,0 +1,33 @@
+<header>
+	<div style="display: table; width: 97vw; margin: 0">
+		<a href="#"id="logo"style="font-family: 'Pacifico', cursive;font-size: 20px;color: black;text-decoration: none;text-align: left; display: table-cell">Squidagram</a>
+		<p style="text-align: right; display: table-cell">
+			<a href="/home.php" title="Home"><img class="linkimg" src="/icons/home.png"/></a>
+			&nbsp;
+			<a href="/post/" title="Post"><img class="linkimg" src="/icons/post.png"/></a>
+			&nbsp;
+			<a href="/" title="Logout"><img class="linkimg" src="/icons/logout.png"/></a>
+		</p>
+	</div>
+</header>
+<div style="height: 50px;"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script>
+    function setColorScheme() {
+        $('body').css('background', 'black')
+        $('body').css('color', 'white')
+        $('main').css('background', '#2e2e2e')
+        $('header').css('background', '#2e2e2e')
+        $('header').css('filter', 'drop-shadow(0px 2px 5px black)')
+        $('#logo').css('color', 'white')
+        $('.linkimg').css('filter', 'invert(1)')
+        $('a').css('color', 'white')
+    }
+    window.onload = function () {
+        if (localStorage.getItem('color')=='dark') {
+        setTimeout(() => { setColorScheme(); $('#color').val("dark");}, 500)
+        }
+    }
+</script>
