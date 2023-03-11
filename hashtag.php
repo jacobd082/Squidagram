@@ -9,26 +9,16 @@
     <link rel="stylesheet" href="/base.css">
 </head>
 <body>
-    <header>
-        <div style="display: table;width: 97vw;margin: 0;">
-            <span style="font-family: 'Pacifico', cursive; font-size: 20px;" style="text-align: left;display: table-cell;">Squidagram</span>
-            <p style="text-align: right;display: table-cell;\">
-                <a href="/home.php" ><img src="/icons/home.png"></a>
-                &nbsp;
-                <a href="/post/" ><img src="/icons/post.png"></a>
-                &nbsp;
-                <a href="/"><img src="/icons/logout.png"></a>
-            </p>
-        </div>
-    </header>
-    <div style="height: 50px;"></div>
+<?php echo file_get_contents('ui/header.htm') ?>
     <h1>#<?php echo $_GET['id']; ?></h1>
     <p style="color:gray;">#<?php echo $_GET['id']; ?>:</p>
     <?php
+if (!function_exists('str_contains')) {
     function str_contains($haystack, $needle)
     {
         return (strpos($haystack, $needle) !== false);
     }
+}
         $json = file_get_contents('data/posts.json');
         $obj = json_decode($json);
         $obj->posts = array_reverse($obj->posts);

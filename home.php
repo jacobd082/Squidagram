@@ -93,7 +93,7 @@ function setColorScheme(id, showToast = true) {
 }
 window.onload = function () {
     if (localStorage.getItem('color')=='dark') {
-    setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 500)
+    setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
 }
 }
     </script>
