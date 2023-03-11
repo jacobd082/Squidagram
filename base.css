@@ -35,8 +35,7 @@ a {
     color: blue;
 }
 
-main.index {
-    max-width: 370px;
+.index {
     background-color: white;
     border-radius: 5px;
     border-color: black;
