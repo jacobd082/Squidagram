@@ -39,14 +39,20 @@
     </header>
     <div style="height: 50px;"></div>
     <center><form action="/data/upload.php" method="post" enctype="multipart/form-data">
-        <main>
+        <?php
+if (isset($_COOKIE['user'])) {
+  echo '<main>
                     <h1>Post</h1>
                     Image File:<br><input type="file" placeholder="No File" required name="fileToUpload" id="fileToUpload"><br><br>
                     Description: <br><textarea type="text" maxlength="200" placeholder="This will be shown bellow your post. (max 200 chars.)" required name="des" id="des" oninput="onInput()" autocomplete="off" style="width: 266px; height: 87px;"></textarea><br><br><div class="g-recaptcha" data-sitekey="6LfB4ckfAAAAAJH3qOotGiFW1Munvvy_o9hC_8AU"></div><p>Make sure that you understand <a href="/help/rules.php?showBack=1">our rules</a> before posting.</p>
                     <button type="submit" class="bold-link">Share</button>
                     <button type="reset" class="red-link">Reset</button><br><br>
                     
-        </main>
+        </main>';
+} else {
+  echo '<main><p>Please login to post!</p></main>';
+}
+        ?>
         <main>
         <?php
             if (isset($_COOKIE['user'])) {
@@ -64,7 +70,7 @@
                 data-type="standard"
                 data-shape="pill"
                 data-theme="outline"
-                data-text="signin"
+                data-text="signinwithgoogle"
                 data-size="large"
                 data-logo_alignment="left">
            </div>';

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/base.css">
     <link rel="manifest" href="/manifest.webmanifest">
 </head>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-93Q3KS0HH5"></script>
 <script>
@@ -112,11 +113,9 @@
             </a></div>
             </p>
         </main>
-        <main class="index">
-            <center>
-                <p>There is currently <?php echo count($obj->posts); ?> posts on Squidagram</p>
-            </center>
-        </main>
+      <main class="index">
+                <p>There is currently:<br><span style="font-size:xx-large;"><b><?php echo count($obj->posts); ?></b> posts</span><br>on Squidagram</p>
+      </main>
         <?php
             if (isset($_COOKIE['user'])) {
                 echo '<main class="index">
@@ -124,14 +123,32 @@
                     <p>Logged in as <b>'.$_COOKIE['user'].'</b><br><a href="/auth/logout.php">Logout</a></p>
                     </center>
                     </main>';
+            } else {
+              echo '<br><div id="g_id_onload"
+                    data-client_id="817915936513-r81t57nc8s0dfe1pun598s61m1d1csp6.apps.googleusercontent.com"
+                    data-context="signup"
+                    data-ux_mode="popup"
+                    data-login_uri="https://squidagram.jacobdrath.co/auth/google.php"
+                    data-auto_prompt="false">
+               </div>
+               
+               <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="pill"
+                    data-theme="outline"
+                    data-text="signinwithgoogle"
+                    data-size="large"
+                    data-logo_alignment="left">
+               </div>';
             }
         ?>
-        <main class="index">
-            <center>
-                <p>Made by <a href="https://zzz.jacobdrath.co">Jacob Drath</a> - <a href="help/privacy-policy.php">Privacy Policy</a> - <a href="help/rules.php">Posting Guidelines</a> - <a href="help/credits.php">Acknowledgments</a></p>
-            </center>
-        </main>
-        <p><a href="javascript:document.getElementById('sidebar').style.display='none'" style="color:gray;font-size: 10px;">Hide this</a></p>
+<ul>
+  <li>Made by <a href="https://zzz.jacobdrath.co">Jacob Drath</a></li>
+  <li><a href="help/privacy-policy.php">Privacy Policy</a></li>
+  <li><a href="help/rules.php">Posting Guidelines</a></li>
+  <li><a href="help/credits.php">Acknowledgments</a></li>
+</ul>
+        <p><a onclick="document.getElementById('sidebar').style.display='none'" style="color:gray;font-size: 10px;cursor: pointer;">Hide this</a></p>
     </aside>
     </div>
     <div id="snackbar"><table><tr><td><img src="/squid.png" width="40px"></td><td><span style="color:gray;font-size:10px;">Squiddy:</span><p id="snacktext" style="padding:0;margin:0;"></p></td></tr></table></div>
@@ -151,6 +168,8 @@ function toast(msg) {
 <?php
     if (isset($_GET['msg'])) {
         echo "toast(\"".$_GET['msg']."\")";
+    } else {
+      echo 'toast("Hi, '.ucfirst($_COOKIE['user']).'!")';
     }
 ?>
 </script>
