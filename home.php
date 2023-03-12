@@ -94,9 +94,22 @@ function setColorScheme(id, showToast = true) {
 window.onload = function () {
     if (localStorage.getItem('color')=='dark') {
     setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        if (localStorage.getItem('color')!="dark") {
+            $('#mdmpa').css('display', 'block')
+        }
+    }
 }
 }
     </script>
+    
+    <div id="mdmpa" style="display: none;"><div id="mobiledarkmode">
+        <div style="height: 20px;"></div>
+        <table><tr>
+            <td><img src="icons/night-mode.png" style="filter: invert(0.5);"></td>
+            <td><span style="color: black;filter: invert(0.5);">Try <a href="javascript:setColorScheme('dark')">dark mode</a>.</span></td>
+        </tr></table>
+    </div></div>
     <div style="display: flex;">
     <div style="margin-left: 15px;flex: 3;">
     <script>
