@@ -52,6 +52,10 @@
                 </form>
                 </div>
                 <p style=\"color:rgba(0,0,0,0.5);\">You have logged in with Google as <b>".$payload['email']."</b></p>";
+
+                    // Log this
+                $toBeLogged = "\n\nUSER LOGGED IN @ ".date('l jS \of F Y h:i:s A')."\nA new user logged in with the name of <<".$first_name." ".$last_name.">>.";
+                file_put_contents('log.txt', $toBeLogged, FILE_APPEND | LOCK_EX);
             } else {
                 echo "Error!";
             }

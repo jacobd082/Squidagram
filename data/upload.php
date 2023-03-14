@@ -65,8 +65,10 @@ if ($_FILES["fileToUpload"]["size"] > 800000) {
 }
 
 // POSTING DISABLED
-$uploadOk= 0;
-echo "Posting is currently disabled.";
+if (file_get_contents('sys/allow-uploads')!="yes") {
+  $uploadOk= 0;
+  echo "Posting is currently disabled.";
+}
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -156,6 +158,9 @@ function removeExif($old, $new)
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
+  // Log this
+$toBeLogged = "\n\nFAILED UPLOAD @ ".date('l jS \of F Y h:i:s A')."\n<<".$_COOKIE['user'].">> tried to upload a post, but it failed.";
+file_put_contents('log.txt', $toBeLogged, FILE_APPEND | LOCK_EX);
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {

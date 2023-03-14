@@ -21,11 +21,14 @@
   gtag('config', 'G-93Q3KS0HH5');
 </script>
 <body>
+    <?php
+        $adminID = "jacobisme"
+    ?>
 <header>
         <div style="display: table;width: 97vw;margin: 0;">
             <a href="#" id="logo" style="font-family: 'Pacifico', cursive; font-size: 20px; color: black; text-decoration: none;" style="text-align: left;display: table-cell;">Squidagram
             <?php
-                            if (@$_POST['admin']=="jacobisme") {
+                            if (@$_POST['admin']==$adminID) {
                                 echo "<span style=\"color: blue;\">Administrator</span>";
                             }
             ?>
@@ -94,14 +97,6 @@ function setColorScheme(id, showToast = true) {
 window.onload = function () {
     if (localStorage.getItem('color')=='dark') {
         setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
-<<<<<<< HEAD
-    setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
-    }
-     /* if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            $('#mdmpa').css('display', 'block')
-    }*/
-=======
-        setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
     }
 }
     </script>
@@ -120,11 +115,6 @@ window.onload = function () {
         <h1>Welcome to Squidagram!</h1>
         <p>This is the homepage, where you will see all the posts by others on Squidagram.</p>
     </main>-->
-    <?php
-                            if (@$_POST['admin']=="jacobisme") {
-                                echo "<main><b>You are logged in as an admin.</b><br><a href=\"admin/update.php\">Update</a></main>";
-                            }
-    ?>
     <?php
         $json = file_get_contents('data/posts.json');
         $obj = json_decode($json);
@@ -170,6 +160,19 @@ window.onload = function () {
                 <p style="font-weight: bold;">Welcome to Squidagram!</p>
             </center>
         </main>
+        <?php
+            if (@$_POST['admin']==$adminID) {
+                echo "<main class=\"index\"><h2>Admin Panel</h2><b>Options:</b><ul><li><a href=\"admin/update.php\">Update to newest version</a></li><li>is_posting_enabled = ".file_get_contents('data/sys/allow-uploads')."<br>(<a href=\"admin/setpost.php?set=yes\">Enable</a> / <a href=\"admin/setpost.php?set=no\">Disable</a>)</li><li><a href=\"data/log.txt\" target=\"_blank\">View log</a></li><form action=\"admin/log.php\" method=\"post\"><li><input name=\"msg\" id=\"msg\" placeholder=\"Log a note...\"></li></form></ul></main>";
+
+                $toBeLogged = "\n\nADMIN LOGIN @ ".date('l jS \of F Y h:i:s A')."\n<jacob> logged in as admin.";
+                file_put_contents('data/log.txt', $toBeLogged, FILE_APPEND | LOCK_EX);
+            } else {
+                if (isset($_COOKIE['user'])) {
+                    $toBeLogged = "\n\n<<".$_COOKIE['user'].">> opened Squidagram @ ".date('l jS \of F Y h:i:s A');
+                    file_put_contents('data/log.txt', $toBeLogged, FILE_APPEND | LOCK_EX);
+                }
+            }
+        ?>
         <main class="index">
             <center>
                 <p>Submit a post <a href="post/">here</a>!</p>
