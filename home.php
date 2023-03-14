@@ -70,7 +70,6 @@ function setColorScheme(id, showToast = true) {
             toast('Set to dark theme!')
         }
         localStorage.setItem('color','dark')
-        $('#mdmpa').css('display', 'none')
     }
     else
     if (id== "light") {
@@ -90,23 +89,22 @@ function setColorScheme(id, showToast = true) {
             toast('Set to light theme!')
         }
         localStorage.setItem('color', 'light')
-        $('#mdmpa').css('display', 'block')
     }
 }
 window.onload = function () {
     if (localStorage.getItem('color')=='dark') {
         setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
+<<<<<<< HEAD
+    setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
     }
-}
-function toggleTheme() {
-    if (localStorage.getItem('color')=='dark') {
-        setColorScheme('light')
-    } else {
-        setColorScheme('dark')
+     /* if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            $('#mdmpa').css('display', 'block')
+    }*/
+=======
+        setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
     }
 }
     </script>
-    <div style="display: table;width: 100%;margin: 0;vertical-align: middle;margin-left:8px;">
     <?php
             if (@$_GET['order']=="new") {
                 echo "<p style=\"color:gray;margin-left: 15px;text-align: left;display: table-cell;padding:5px;\">Posts <a id=\"order\" style=\"color:gray;\" href=\"/home.php\">(Newer → Older)</a>:</p>";
@@ -114,12 +112,6 @@ function toggleTheme() {
                 echo "<p style=\"color:gray;margin-left: 15px;text-align: left;display: table-cell;padding:5px;\">Posts <a id=\"order\" style=\"color:gray;\" href=\"/home.php?order=new\">(Older → Newer)</a>:</p>";
             }
     ?>
-    <span id="mobiledarkmode">
-        <span onclick="toggleTheme()" style="display:relevant;top:8px;">
-            <img id="mdmicon" src="icons/night-mode.png" style="filter: invert(0.5);">
-        </span>
-    </span>
-    </div>
     <div style="display: flex;">
     <div style="margin-left: 15px;flex: 3;">
     <script>

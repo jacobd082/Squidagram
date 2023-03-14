@@ -33,6 +33,7 @@
         <p>These rules tell you what you are allowed to post on Squidagram.</p>
         <p>A squid swimming in the sea:<br><b style="color: rgb(0, 165, 0);">Allowed</b></p>
         <p>An appropriate drawing of a squid:<br><b style="color: rgb(0, 165, 0);">Allowed</b></p>
+        <p>An appropriate meme/funny media:<br><b style="color: rgb(0, 165, 0);">Allowed</b></p>
         <p>Anything that is not a squid:<br><b style="color: red;">Not allowed</b></p>
         <p>An octopus:<br><b style="color: red;">Not allowed</b></p>
         <p>Squids participating in mating or reproductive behavior:<br><b style="color: red;">Not allowed</b></p>
