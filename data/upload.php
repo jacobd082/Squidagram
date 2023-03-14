@@ -65,8 +65,8 @@ if ($_FILES["fileToUpload"]["size"] > 800000) {
 }
 
 // POSTING DISABLED
-// $uploadOk= 0;
-// echo "Posting is currently disabled.";
+$uploadOk= 0;
+echo "Posting is currently disabled.";
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"

@@ -94,12 +94,10 @@ function setColorScheme(id, showToast = true) {
 window.onload = function () {
     if (localStorage.getItem('color')=='dark') {
     setTimeout(() => { setColorScheme('dark', false); $('#color').val("dark");}, 0)
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        if (localStorage.getItem('color')!="dark") {
-            $('#mdmpa').css('display', 'block')
-        }
     }
-}
+     /* if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            $('#mdmpa').css('display', 'block')
+    }*/
 }
     </script>
     
